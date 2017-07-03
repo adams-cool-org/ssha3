@@ -28,6 +28,10 @@ at this server location:
 | Small_Sewer_Capacity.gdb     | Geodatabase containing data results of small sewer analysis |  
 | Mannings Slope Calcs.xlsm    | Excel file for slope verification |
 
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/G3psxs3gyf8" frameborder="0" allowfullscreen></iframe>
+
+
 ## 1. Delineate Drainage Areas
 1. Navigate to the study area based on the street connection point provided.
 2. Identify the study sewer and the branches that contribute to it (if any).
