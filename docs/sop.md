@@ -12,7 +12,7 @@ subtitle: Standard Operating Procedure
 # Small Sewer Hydraulic Analysis
 ## Standard Operating Procedure
 
-Updated May 22, 2017
+Updated June 30, 2017
 
 This SOP is intended to guide the completion of small sewer hydraulic analyses
 (SSHA) to determine the hydraulic capacity and peak design runoff from
