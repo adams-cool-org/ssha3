@@ -16,7 +16,6 @@ subtitle: Small Sewer Hydraulic Analysis
 
 Updated June 30, 2017
 
-
 This SOP is intended to guide the completion of small sewer hydraulic analyses
 (SSHA) to determine the hydraulic capacity and peak design runoff from
 contributing drainage areas for small sewers. This procedure makes us of GIS
@@ -24,15 +23,7 @@ script tools applied within an ArcGIS basemap and geodatabase on the LAMP drive
 at this server location:
 > \\\PWDHQR2\Data\Planning &amp; Research\Linear Asset Management Program\Water Sewer Projects Initiated\03 GIS Data\Hydraulic Studies
 
-#### Relevant Files
-
-| Filename | Description |
-| ---- | ---- |
-| Small Sewer Capacity.mxd | ArcMap file  |
-| Small_Sewer_Capacity.gdb | Geodatabase containing data results of small sewer analysis |  
-| Mannings Slope Calcs.xlsm | Excel file for slope verification |
-
-The SSHA procedure is outlined below:
+A decription of all related files is located here. The SSHA procedure is outlined below:
 
 1. [Delineate Drainage Areas](#1-delineate-drainage-areas)
 2. [Associate Sewers to Drainage Areas](#2-associate-sewers-to-drainage-areas)

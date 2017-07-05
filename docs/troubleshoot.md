@@ -15,5 +15,5 @@ With some versions of ArcMap, exporting data driven pages as PDFs fails after ex
 
 ### Run H&H Calcs fails
 There are several reasons that this step may fail. Luckily, most of them are realtively easy to troubleshoot. Here are some examples of steps you can take to rectify these issues:
-  * **Check for <null> data**: review the data within the StudiedSewers layer to confirm that no rows appear to have all `<null>` data. This is made easy by sorting the columns (`<null>` rows will appear that the top of the sort). Delete any rows with `<null>` data and rerun the tool.
+  * **Check for null data**: review the data within the StudiedSewers layer to confirm that no rows appear to have all `<null>` data. This is made easy by sorting the columns (`<null>` rows will appear that the top of the sort). Delete any rows with `<null>` data and rerun the tool.
   * **Confirm StudyArea_ID is set**: confirm that new studied sewers have a StudyArea_ID set. Sort the rows in the StudySewers and Small_Sewer_Drainage_Areas tables and delete or rectify any `<null>` StudyArea_ID data.
