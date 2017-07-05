@@ -30,8 +30,10 @@ at this server location:
 | Small_Sewer_Capacity.gdb | Geodatabase containing data results of small sewer analysis |  
 | Mannings Slope Calcs.xlsm | Excel file for slope verification |
 
-
-
+The SSHA procedure is outlined below:
+1. [Delineate Drainage Areas](#delineate-drainage-areas)
+2. [Associate Sewers to Drainage Areas](#associate-sewers-to-drainage-areas)
+3. [Hydraulic and Hydrologic Calculations](#perform-hydraulic-and-hydrologic-calculations)
 
 ## 1. Delineate Drainage Areas
 1. Navigate to the study area based on the street connection point provided.
