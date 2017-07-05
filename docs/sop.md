@@ -10,7 +10,7 @@ subtitle: Small Sewer Hydraulic Analysis
     ol {margin: 0em 0;}
 </style>
 
-![SSHA Example Screenshot]({{site.url}}/public/img/ssha-example-study-area.jpg)
+![SSHA Example Screenshot]({{site.baseurl}}/public/img/ssha-example-study-area.jpg)
 
 Updated June 30, 2017
 
