@@ -1,7 +1,7 @@
 ---
-layout: default
-title: Small Sewer Hydraulic Analysis
-subtitle: Standard Operating Procedure
+layout: page
+title: Standard Operating Procedure
+subtitle: Small Sewer Hydraulic Analysis
 ---
 
 <style type="text/css">
