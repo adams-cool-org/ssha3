@@ -104,24 +104,21 @@ The &quot;Run H&amp;H Calcs&quot; will tag sewers that have missing or `<null>` 
 ```SQL
 Project_ID = [project_id] AND (Tag = 'SS_MIN_SLOPE' OR Tag = 'TC_MIN_SLOPE' OR Tag = 'TC_UNDEFINED')
 ```
-Replace `[project_id]` with the appropriate Project_ID and click "Apply" to run the query.
-![Data Gap Query]({{site.baseurl}}/public/img/resolve-data-gap-query.jpg)
-This query will select all important sewers within the Project_ID that are missing data.
-4. Attempt to resolve the missing slope value using the following process, until a slope value is determined:
-    1. Find the slope value via design drawing
-        1. For each study sewer tagged in this category, navigate to the drawing using the URL in the &quot;STICKERLINK&quot; field. Do this by copying and pasting the URL into the Internet Explorer browser.
-        2. Determine if the missing slope values are listed in the drawing for the study sewer.
-            1. NOTE** : In some instances, the drawing for a neighboring sewer will contain the missing slope value that is needed.
-            2. If the missing slope value is listed, input this value as an attribute in the &quot;Slope\_Used&quot; field for the study sewer.
-    2. Find the slope value via manhole invert elevations
+Replace `[project_id]` with the appropriate Project_ID and click "Apply" to run the query. This query will select all important sewers within the Project_ID that are missing data.
+4. For each sewer, attempt to resolve the missing slope value using the following methods, until a slope value is determined:
+    1. **From Design/Return Plans**
+        1. For each study sewer tagged in this category, navigate to the drawing using the URL in the `STICKERLINK` field. Do this by copying and pasting the URL into the Internet Explorer browser.
+        2. Determine if the missing slope values are listed in the drawing for the study sewer. Note than in some instances, the drawing for a neighboring sewer will contain the missing slope value that is needed.
+    2. **From Adjacent Manhole Inverts**
         1. Navigate to the upstream and downstream manholes of the sewer in question and see if invert elevations exist in the attribute table for these manholes.
-        2. Use the invert elevations and the length of the pipe to calculate slope and input this value as an attribute in the &quot;Slope\_Used&quot; field for the study sewer.
-    3. Find the slope value via the Terrain Slope
-        1. Use the &quot;GIS\_GSG.Contour\_2015\_1ft&quot; layer to view contours for the area to calculate the slope.
-        2. Input the parameters into the Slope Value Verification Tool and navigate to the Terrain Slope section. Determine if the new velocity value falls within the design velocity criteria. If it does, input this value as an attribute in the &quot;Slope\_Used&quot; field for the study sewer.
-    4. Find the slope value via minimum design velocity.
-        1. Input parameters into the Slope Value Verification tool and navigate to the minimum design velocity section. Input this value as an attribute in the &quot;Slope\_Used&quot; field for the study sewer.
-5. In the Editor Toolbar dropdown menu, select &quot;Save Edits&quot;, then &quot;Stop Editing&quot;.
+        2. Use the invert elevations and the length of the pipe to calculate slope.
+    3. **Based on Ground Surface Terrain**
+        1. Use the "GIS_GSG.Contour_2015_1ft" layer to view contours for the area to calculate the slope.
+        2. Input the parameters into the Slope Value Verification Tool and navigate to the Terrain Slope section. Determine if the new velocity value falls within the design velocity criteria. If it does, the slope may be used.
+    4. **Based on Minimum Design Velocity**
+        1. Input parameters into the Slope Value Verification tool and navigate to the minimum design velocity section.
+5. Input this resolved slope value as an attribute in the `Slope_Used` field for the study sewer.
+6. In the Editor Toolbar dropdown menu, select "Save Edits", then "Stop Editing".
 
 ## 5. Assess Neighboring Sewers
 Determine whether sewers adjacent to the study sewer (upstream and downstream) are within the scope of the SSHA process.
