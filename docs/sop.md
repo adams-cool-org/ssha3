@@ -96,14 +96,17 @@ Add the study sewers (and their contributing sewers) from the &quot;Waste Water 
 3. Input the command prompt options. Enter the Study Area ID to perform calculations for one study sewer or enter the Project ID to perform batch calculations on the entire project.
 
 ## 4. Resolve Data Gaps
-The &quot;Run H&amp;H Calcs&quot; will tag sewers that have missing or &quot;&lt;Null&gt;&quot; slope values. To continue with the hydraulic calculations, a minimum slope of 0.01% is assumed. Review the drawings for these sewers and determine whether these slope values can be resolved.
+![Data Gap Example Screenshot]({{site.baseurl}}/public/img/example-data-gap.png)
+The &quot;Run H&amp;H Calcs&quot; will tag sewers that have missing or `<null>` slope values. To continue with the hydraulic calculations, a minimum slope of 0.01% is assumed. Review the drawings for these sewers and determine whether these slope values can be resolved.
 1. Right-click the &quot;StudiedSewers&quot; layer. Select &quot;Edit Features&quot;, then &quot;Start Editing&quot;.
 2. Open the &quot;StudiedSewers&quot; attribute table.
-3. Open the &quot;Select By Attributes&quot; tool and paste the following SQL query into the WHERE CLAUSE text box:
+3. Open the &quot;Select By Attributes&quot; tool and paste the following SQL query into the `WHERE` text box:
 ```SQL
 Project_ID = [project_id] AND (Tag = 'SS_MIN_SLOPE' OR Tag = 'TC_MIN_SLOPE' OR Tag = 'TC_UNDEFINED')
 ```
-
+Replace `[project_id]` with the appropriate Project_ID and click "Apply" to run the query.
+![Data Gap Query]({{site.baseurl}}/public/img/resolve-data-gap-query.jpg)
+This query will select all important sewers within the Project_ID that are missing data.
 4. Attempt to resolve the missing slope value using the following process, until a slope value is determined:
     1. Find the slope value via design drawing
         1. For each study sewer tagged in this category, navigate to the drawing using the URL in the &quot;STICKERLINK&quot; field. Do this by copying and pasting the URL into the Internet Explorer browser.
