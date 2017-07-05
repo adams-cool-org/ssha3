@@ -31,7 +31,6 @@ at this server location:
 | Mannings Slope Calcs.xlsm | Excel file for slope verification |
 
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/G3psxs3gyf8" frameborder="0" allowfullscreen></iframe>
 
 
 ## 1. Delineate Drainage Areas
@@ -136,6 +135,7 @@ Determine whether sewers adjacent to the study sewer (upstream and downstream) a
       2. Navigate to the &quot;Scripts/arcmap\_expressions&quot; folder, select &quot;StudyAreaSummary2.lxp &quot;
       3. Click &quot;Open&quot;
       4. Click &quot;OK&quot;
+
 ## 7. QA/QC Procedure
 1. Confirm that runoff coefficient is consistent with land cover characteristics
     1. For dense areas of the city, assume C=0.85 (default)
@@ -146,7 +146,9 @@ Determine whether sewers adjacent to the study sewer (upstream and downstream) a
 3. Confirm that the &quot;Run H&amp;H Calcs&quot; tool is executed after all corrections to data are made.
 4. For each study area, review the return plans to confirm that DataConv data is accurate.
 5. Review results and identify irregularities
-    1. Confirm that calculated capacity is within range of typical values. [This chart](https://plot.ly/~aerispaha/57.embed) shows possible capacity values for a range of sewer diameters within the design velocity range (2.5 to 15fps)
+    1. Confirm that calculated capacity is within range of typical values. [This chart](https://plot.ly/~aerispaha/57.embed) shows possible capacity values for a range of sewer diameters within the design velocity range (2.5 to 15fps):
+    [<img src="{{site.baseurl}}/public/img/capacity-within-design-velocity-plot.png">](https://plot.ly/~aerispaha/57.embed)
+
 ## 8. Export the Study
 1. Go to &quot;File&quot;, then &quot;Export Map&quot;
 2. Navigate to the corresponding project folder for the current work order number and go to &quot;01 Analysis\03 Sewer Analysis&quot;
