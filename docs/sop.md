@@ -9,6 +9,7 @@ subtitle: Small Sewer Hydraulic Analysis
     ol ol { list-style-type: lower-roman;}
     ol {margin: 0em 0;}
     ol.normal-list{list-style-type:decimal;}
+    span { white-space:nowrap; }
 </style>
 
 ![SSHA Example Screenshot]({{site.baseurl}}/public/img/ssha-example-study-area.png)
@@ -43,6 +44,7 @@ The SSHA procedure is outlined below:
 8. [Export the Study](#8-export-the-study)
 {: .normal-list}
 
+<hr>
 
 ## 1. Delineate Drainage Areas
 1. Navigate to the study area based on the street connection point provided.
@@ -73,6 +75,7 @@ The SSHA procedure is outlined below:
 
 ## 2. Associate Sewers to Drainage Areas
 Add the study sewers (and their contributing sewers) from the &quot;Waste Water Gravity Mains&quot; layer to the &quot;Studied Sewers&quot; Layer.
+![Associate Sewers Example Screenshot]({{site.baseurl}}/public/img/associate-sewers-example.jpg)
 1. Associate study sewers to the Drainage Areas.
     1. Navigate to the Small\_Sewer\_Calcs Toolbox within the ArcToolbox.
     2. Select the &quot;Associate Sewers to DAs&quot; tool.
@@ -96,6 +99,7 @@ Add the study sewers (and their contributing sewers) from the &quot;Waste Water 
 3. In the Editor Toolbar dropdown menu, select &quot;Save Edits&quot;, then &quot;Stop Editing&quot;.
 
 ## 3. Perform Hydraulic and Hydrologic Calculations
+![HH Calculations Example Screenshot]({{site.baseurl}}/public/img/hhcalcs-example.jpg)
 1. Navigate to the Small\_Sewer\_Calcs Toolbox within the ArcToolbox
 2. Select the &quot;Run H&amp;H Calcs&quot; tool
 3. Input the command prompt options. Enter the Study Area ID to perform calculations for one study sewer or enter the Project ID to perform batch calculations on the entire project.
