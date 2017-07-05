@@ -23,7 +23,7 @@ script tools applied within an ArcGIS basemap and geodatabase on the LAMP drive
 at this server location:
 > \\\PWDHQR2\Data\Planning &amp; Research\Linear Asset Management Program\Water Sewer Projects Initiated\03 GIS Data\Hydraulic Studies
 
-A decription of all related files is located here. The SSHA procedure is outlined below:
+A decription of all related files is located [here]({{site.baseurl}}/files). The SSHA procedure is outlined below:
 
 1. [Delineate Drainage Areas](#1-delineate-drainage-areas)
 2. [Associate Sewers to Drainage Areas](#2-associate-sewers-to-drainage-areas)
@@ -48,9 +48,9 @@ A decription of all related files is located here. The SSHA procedure is outline
 4. Draft the new drainage area based on the following rules of thumb:
     1. Blocks that are adjacent to contributing pipe reaches at the edge of the drainage area should be bisected.
     2. Block ends should be cut at the parcel vertices on either side of the street.
-    3. Drainage areas should be cut at approximate 45 degree angles from terminal block parcel vertices and extended until approximately the block midpoint. A sample drafted drainage area is provided below for reference.
-
-      > As a rule of thumb, drainage area boundaries should evenly split the space between the sewers. For example, a drainage boundary between sewers that are oriented with a 60 degree angle between them should bisect the sewers at 30 degrees from each sewer. Surface features and parcel boundaries should not influence the drainage area delineation.
+    3. Drainage areas should be cut at approximate 45 degree angles from terminal block parcel vertices and extended until approximately the block midpoint. As a rule of thumb, drainage area boundaries should evenly split the space between the sewers.
+    ![SSHA Example Shed Delineation]({{site.baseurl}}/public/img/ssha-delineation-angles-example.png)
+    As in the example above, a drainage boundary between sewers that are oriented with a 50 degree angle between them should bisect the sewers at 25 degrees from each sewer. Surface features and parcel boundaries should not influence the drainage area delineation.
 
 5. Compare your drafted drainage area to the &quot;NewSubSheds&quot; layer as secondary measure to ensure that vital portions of the drainage area are not missed.
 6. Open the &quot;Drainage Areas&quot; attribute table and manually enter the [Project\_ID]({{site.baseurl}}/definitions/#project_id), StudyArea\_ID and ConnectionPoint attributes for the new drainage area. For example, data entered for two drainage areas with a [Project\_ID]({{site.baseurl}}/definitions/#project_id) (or work order number) of 40000 should look like this:
