@@ -9,8 +9,6 @@ subtitle: Small Sewer Hydraulic Analysis
     ol ol { list-style-type: lower-roman;}
     ol {margin: 0em 0;}
 </style>
-# Small Sewer Hydraulic Analysis
-## Standard Operating Procedure
 
 Updated June 30, 2017
 
@@ -22,11 +20,18 @@ at this server location:
 > \\\PWDHQR\Data\Planning &amp; Research\Linear Asset Management Program\Water Sewer Projects Initiated\03 GIS Data\Hydraulic Studies
 
 #### Relevant Files
-| Filename                | Description |
-| --- | --- |
-| Small Sewer Capacity.mxd     | ArcMap file  |
-| Small_Sewer_Capacity.gdb     | Geodatabase containing data results of small sewer analysis |  
-| Mannings Slope Calcs.xlsm    | Excel file for slope verification |
+
+| Project\_ID | StudyArea\_ID | ConnectionPoint |
+| --- | --- | --- |
+| 40000 | 40000\_01 | 11 St from Market to Filbert |
+| 40000 | 40000\_02 | 11 St from Filbert to Arch |
+
+
+| Filename | Description |
+| ---- | ---- |
+| Small Sewer Capacity.mxd | ArcMap file  |
+| Small_Sewer_Capacity.gdb | Geodatabase containing data results of small sewer analysis |  
+| Mannings Slope Calcs.xlsm | Excel file for slope verification |
 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/G3psxs3gyf8" frameborder="0" allowfullscreen></iframe>
