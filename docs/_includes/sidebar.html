@@ -3,7 +3,7 @@
     <div class="sidebar-about">
       <h1>
         <a href="{{ site.baseurl }}">
-          {{ site.title }}
+          <!-- {{ site.title }} -->
         </a>
       </h1>
       <!-- <p class="lead">{{ site.description }}</p> -->
@@ -27,6 +27,16 @@
       {% endfor %}
 
       <a class="sidebar-nav-item" href="{{ site.github.repo }}">GitHub project</a>
+
+    <h4>Page URL:{{page.url}} pages</h4>
+    <ul>
+      {% for p in site.pages %}
+        <li>
+          <a href="{{ p.url }}">{{ p.url }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+
     </nav>
 
     <p>&copy; {{ site.time | date: '%Y' }}. All rights reserved.</p>
