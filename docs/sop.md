@@ -171,5 +171,3 @@ Determine whether sewers adjacent to the study sewer (upstream and downstream) a
 4. Choose the &quot;.PDF&quot; file type.
 5. Under &quot;Options&quot; choose the &quot;Pages&quot; tab. Choose &quot;All Pages&quot;
 6. Click &quot;Save&quot; to export the file.
-
-**NOTE** : ArcMap 10.1 has a known bug which prevents the program from exporting maps multiple times. If you wish to export another study to PDF, restart ArcMap. Otherwise, the program will crash.
