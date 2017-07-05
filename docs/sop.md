@@ -32,8 +32,8 @@ at this server location:
 | Mannings Slope Calcs.xlsm | Excel file for slope verification |
 
 The SSHA procedure is outlined below:
-{: class="normal-list"}
-1. [Delineate Drainage Areas](#1-delineate-drainage-areas)
+
+1. {: class="normal-list"}[Delineate Drainage Areas](#1-delineate-drainage-areas)
 2. [Associate Sewers to Drainage Areas](#2-associate-sewers-to-drainage-areas)
 3. [Hydraulic and Hydrologic Calculations](#3-perform-hydraulic-and-hydrologic-calculations)
 4. [Resolve Data Gaps](#4-resolve-data-gaps)
