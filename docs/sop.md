@@ -31,10 +31,12 @@ at this server location:
 | Mannings Slope Calcs.xlsm | Excel file for slope verification |
 
 The SSHA procedure is outlined below:
-1. [Delineate Drainage Areas](#delineate-drainage-areas)
-2. [Associate Sewers to Drainage Areas](#associate-sewers-to-drainage-areas)
-3. [Hydraulic and Hydrologic Calculations](#perform-hydraulic-and-hydrologic-calculations)
+1. [Delineate Drainage Areas](#1-delineate-drainage-areas)
+2. [Associate Sewers to Drainage Areas](#2-associate-sewers-to-drainage-areas)
+3. [Hydraulic and Hydrologic Calculations](#3-perform-hydraulic-and-hydrologic-calculations)
+4. [Resolve Data Gaps](#4-resolve-data-gaps)
 
+{: id="delineate-drainage-areas"}
 ## 1. Delineate Drainage Areas
 1. Navigate to the study area based on the street connection point provided.
 2. Identify the study sewer and the branches that contribute to it (if any).
