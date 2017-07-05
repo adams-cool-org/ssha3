@@ -33,7 +33,7 @@ at this server location:
 
 The SSHA procedure is outlined below:
 
-1. {: class="normal-list"}[Delineate Drainage Areas](#1-delineate-drainage-areas)
+1. [Delineate Drainage Areas](#1-delineate-drainage-areas)
 2. [Associate Sewers to Drainage Areas](#2-associate-sewers-to-drainage-areas)
 3. [Hydraulic and Hydrologic Calculations](#3-perform-hydraulic-and-hydrologic-calculations)
 4. [Resolve Data Gaps](#4-resolve-data-gaps)
@@ -41,6 +41,8 @@ The SSHA procedure is outlined below:
 6. [Set Up Data Driven Pages](#6-set-up-data-driven-pages)
 7. [Qaulity Control Procedure](#7-qaulity-control-procedure)
 8. [Export the Study](#8-export-the-study)
+{: .normal-list}
+
 
 ## 1. Delineate Drainage Areas
 1. Navigate to the study area based on the street connection point provided.
