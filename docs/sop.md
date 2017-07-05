@@ -62,7 +62,7 @@ The SSHA procedure is outlined below:
       > As a rule of thumb, drainage area boundaries should evenly split the space between the sewers. For example, a drainage boundary between sewers that are oriented with a 60 degree angle between them should bisect the sewers at 30 degrees from each sewer. Surface features and parcel boundaries should not influence the drainage area delineation.
 
 5. Compare your drafted drainage area to the &quot;NewSubSheds&quot; layer as secondary measure to ensure that vital portions of the drainage area are not missed.
-6. Open the &quot;Drainage Areas&quot; attribute table and manually enter the Project\_ID, StudyArea\_ID and ConnectionPoint attributes for the new drainage area. For example, data entered for two drainage areas with a Project\_ID (or work order number) of 40000 should look like this:
+6. Open the &quot;Drainage Areas&quot; attribute table and manually enter the [Project\_ID]({{site.baseurl}}/#project_id), StudyArea\_ID and ConnectionPoint attributes for the new drainage area. For example, data entered for two drainage areas with a [Project\_ID]({{site.baseurl}}/#project_id) (or work order number) of 40000 should look like this:
 
       | Project\_ID | StudyArea\_ID | ConnectionPoint |
       | --- | --- | --- |
@@ -80,7 +80,7 @@ Add the study sewers (and their contributing sewers) from the &quot;Waste Water 
     1. Navigate to the Small\_Sewer\_Calcs Toolbox within the ArcToolbox.
     2. Select the &quot;Associate Sewers to DAs&quot; tool.
     3. Input the command prompt options:
-        * Project ID – Project\_ID from the &quot;Drainage Areas&quot; attribute table
+        * [Project\_ID]({{site.baseurl}}/#project_id) – Project\_ID from the &quot;Drainage Areas&quot; attribute table
         * From Sewers Layer – &quot;Waste Water Gravity Mains&quot; or &quot;Storm Water Gravity Mains&quot;
         * Study Sewers Layer – &quot;StudiedSewers&quot;
         * Drainage Area Layer – &quot;Drainage Areas&quot;
