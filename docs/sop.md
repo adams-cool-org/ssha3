@@ -10,22 +10,19 @@ subtitle: Small Sewer Hydraulic Analysis
     ol {margin: 0em 0;}
 </style>
 
+![SSHA Example Screenshot]({{site.url}}/public/img/ssha-example-study-area.jpg)
+
 Updated June 30, 2017
+
 
 This SOP is intended to guide the completion of small sewer hydraulic analyses
 (SSHA) to determine the hydraulic capacity and peak design runoff from
 contributing drainage areas for small sewers. This procedure makes us of GIS
 script tools applied within an ArcGIS basemap and geodatabase on the LAMP drive
 at this server location:
-> \\\PWDHQR\Data\Planning &amp; Research\Linear Asset Management Program\Water Sewer Projects Initiated\03 GIS Data\Hydraulic Studies
+> \\\PWDHQR2\Data\Planning &amp; Research\Linear Asset Management Program\Water Sewer Projects Initiated\03 GIS Data\Hydraulic Studies
 
 #### Relevant Files
-
-| Project\_ID | StudyArea\_ID | ConnectionPoint |
-| --- | --- | --- |
-| 40000 | 40000\_01 | 11 St from Market to Filbert |
-| 40000 | 40000\_02 | 11 St from Filbert to Arch |
-
 
 | Filename | Description |
 | ---- | ---- |
@@ -42,7 +39,7 @@ at this server location:
 2. Identify the study sewer and the branches that contribute to it (if any).
     1. Ensure the study sewer is within the size limit for the SSHA process. This tool is designed to be used on conduits that are no larger than 36&quot; diameter or equivalent size.
     2. The Trace Upstream tool may be used to identify contributing branches. To use this, ensure the Utility Network Analyst tool is added to the toolbar and set on the &quot;Data Conversion Waste Water Network&quot; or &quot;Data Conversion Storm Water Network&quot;, depending on the network being analyzed.
-    3. Confirm that Vent Pipes are disable from this analysis (these tend to erroneously extend the upstream trace). To do this, right-click the &quot;Analysis&quot; drop down menu, &quot;Disable Layers&quot; and check &quot;Storm Water Vent Pipes&quot; or &quot;Waste Water Vent Pipes&quot;.
+    3. Confirm that Vent Pipes are disabled from this analysis (these tend to erroneously extend the upstream trace). To do this, right-click the &quot;Analysis&quot; drop down menu, &quot;Disable Layers&quot; and check &quot;Storm Water Vent Pipes&quot; or &quot;Waste Water Vent Pipes&quot;.
     4. Place an Edge Flag Tool near the downstream end of the study pipe, select &quot;Trace Upstream&quot;, and click the &quot;Solve&quot; button. The contributing branches will be highlighted in red. Review the identified upstream pipes and check for errors.
 3. The contributing drainage area should encompass all of the contributing branches. To delineate the new drainage area, first right click the &quot;Drainage Areas&quot; layer and select &quot;Edit Features&quot;&gt;&quot;Start Editing&quot;. Then, click on &quot;Create Features&quot; in the Editor Toolbar and select the &quot;Drainage Areas&quot; layer.
 4. Draft the new drainage area based on the following rules of thumb:
@@ -50,7 +47,7 @@ at this server location:
     2. Block ends should be cut at the parcel vertices on either side of the street.
     3. Drainage areas should be cut at approximate 45 degree angles from terminal block parcel vertices and extended until approximately the block midpoint. A sample drafted drainage area is provided below for reference.
 
-    > As a rule of thumb, drainage area boundaries should evenly split the space between the sewers. For example, a drainage boundary between sewers that are oriented with a 60 degree angle between them should bisect the sewers at 30 degrees from each sewer. Surface features and parcel boundaries should not influence the drainage area delineation.
+      > As a rule of thumb, drainage area boundaries should evenly split the space between the sewers. For example, a drainage boundary between sewers that are oriented with a 60 degree angle between them should bisect the sewers at 30 degrees from each sewer. Surface features and parcel boundaries should not influence the drainage area delineation.
 
 5. Compare your drafted drainage area to the &quot;NewSubSheds&quot; layer as secondary measure to ensure that vital portions of the drainage area are not missed.
 6. Open the &quot;Drainage Areas&quot; attribute table and manually enter the Project\_ID, StudyArea\_ID and ConnectionPoint attributes for the new drainage area. For example, data entered for two drainage areas with a Project\_ID (or work order number) of 40000 should look like this:
@@ -65,15 +62,15 @@ at this server location:
 8. In the Editor Toolbar dropdown menu, select &quot;Save Edits&quot;, then &quot;Stop Editing&quot;.
 
 ## 2. Associate Sewers to Drainage Areas
-Add the study sewers (and their contributing sewers) from the &quot;Waste Water Gravity Mains&quot; layer to the &quot;Studied Sewers&quot; Layer
+Add the study sewers (and their contributing sewers) from the &quot;Waste Water Gravity Mains&quot; layer to the &quot;Studied Sewers&quot; Layer.
 1. Associate study sewers to the Drainage Areas.
     1. Navigate to the Small\_Sewer\_Calcs Toolbox within the ArcToolbox.
     2. Select the &quot;Associate Sewers to DAs&quot; tool.
     3. Input the command prompt options:
-        1. Project ID – Project\_ID from the &quot;Drainage Areas&quot; attribute table
-        2. From Sewers Layer – &quot;Waste Water Gravity Mains&quot; or &quot;Storm Water Gravity Mains&quot;
-        3. Study Sewers Layer – &quot;StudiedSewers&quot;
-        4. Drainage Area Layer – &quot;Drainage Areas&quot;
+        * Project ID – Project\_ID from the &quot;Drainage Areas&quot; attribute table
+        * From Sewers Layer – &quot;Waste Water Gravity Mains&quot; or &quot;Storm Water Gravity Mains&quot;
+        * Study Sewers Layer – &quot;StudiedSewers&quot;
+        * Drainage Area Layer – &quot;Drainage Areas&quot;
     4. Select &quot;OK&quot;. The tool will populate the StudiedSewers layer with the sewers intersecting the target drainage area.
 2. Identify the Study Sewer and Time of Concentration (TC) path for each study area.
     1. Right-click the &quot;StudiedSewers&quot; layer. Select &quot;Edit Features&quot;, then &quot;Start Editing&quot;.

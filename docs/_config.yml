@@ -7,9 +7,9 @@ permalink:        pretty
 # relative_permalinks: true
 
 # Setup
-title:            Small Sewer Hydraulic Analysis
-tagline:          'A Jekyll theme'
-description:      'Standard operating procedure for Small Sewer Hydraulic Analysis'
+title:            SSHA
+tagline:          ''
+description:      'Resources and procedure for Small Sewer Hydraulic Analysis'
 url:              https://adams-cool-org.github.io
 baseurl:          /ssha3
 
