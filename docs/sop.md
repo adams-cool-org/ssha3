@@ -8,6 +8,7 @@ subtitle: Small Sewer Hydraulic Analysis
     ol { list-style-type: lower-alpha; }
     ol ol { list-style-type: lower-roman;}
     ol {margin: 0em 0;}
+    ol.normal-list{list-style-type:decimal;}
 </style>
 
 ![SSHA Example Screenshot]({{site.baseurl}}/public/img/ssha-example-study-area.png)
@@ -31,12 +32,16 @@ at this server location:
 | Mannings Slope Calcs.xlsm | Excel file for slope verification |
 
 The SSHA procedure is outlined below:
+{: class="normal-list"}
 1. [Delineate Drainage Areas](#1-delineate-drainage-areas)
 2. [Associate Sewers to Drainage Areas](#2-associate-sewers-to-drainage-areas)
 3. [Hydraulic and Hydrologic Calculations](#3-perform-hydraulic-and-hydrologic-calculations)
 4. [Resolve Data Gaps](#4-resolve-data-gaps)
+5. [Assess Neighboring Sewers](#5-assess-neighboring-sewers)
+6. [Set Up Data Driven Pages](#6-set-up-data-driven-pages)
+7. [Qaulity Control Procedure](#7-qaulity-control-procedure)
+8. [Export the Study](#8-export-the-study)
 
-{: id="delineate-drainage-areas"}
 ## 1. Delineate Drainage Areas
 1. Navigate to the study area based on the street connection point provided.
 2. Identify the study sewer and the branches that contribute to it (if any).
@@ -140,7 +145,7 @@ Determine whether sewers adjacent to the study sewer (upstream and downstream) a
       3. Click &quot;Open&quot;
       4. Click &quot;OK&quot;
 
-## 7. QA/QC Procedure
+## 7. Qaulity Control Procedure
 1. Confirm that runoff coefficient is consistent with land cover characteristics
     1. For dense areas of the city, assume C=0.85 (default)
     2. For less dense residential areas (e.g. Manayunk, Northeast, etc.), assume C=0.75
