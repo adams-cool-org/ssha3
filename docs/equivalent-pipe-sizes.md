@@ -7,7 +7,12 @@ This data is provided as a quick reference for non-circular sewer geometries and
 
 <hr>
 
+### Egg Sewers: Equivalent Sizes
+| Height | Width | Equivalent Diameter |
+| :------: | :-----: | :------------------: |{% for sewer in site.data.non_circular_sizes_in_scope_1percent %}{% if sewer.PIPESHAPE == 'EGG' %}
+| {{ sewer.Height }} | {{ sewer.Width }} | {{ sewer.Replacement_D }} |{% endif %}{% endfor %}
 
-| Height | Width | Shape | Equivalent Diameter |
-| ------ | ----- | ----- | ------------------ |{% for sewer in site.data.non_circular_sizes_in_scope_1percent %}
-| {{ sewer.Height }} | {{ sewer.Width }} | {{ sewer.PIPESHAPE }} | {{ sewer.Replacement_D }} |{% endfor %}
+### Box Sewers: Equivalent Sizes
+| Height | Width | Equivalent Diameter |
+| :------: | :-----: | :------------------: |{% for sewer in site.data.non_circular_sizes_in_scope_1percent %}{% if sewer.PIPESHAPE == 'BOX' %}
+| {{ sewer.Height }} | {{ sewer.Width }} | {{ sewer.Replacement_D }} |{% endif %}{% endfor %}
