@@ -80,7 +80,7 @@ Add the study sewers (and their contributing sewers) from the __Waste Water Grav
     1. Right-click the __StudiedSewers__ layer. Select _Edit Features_, then _Start Editing_.
     2. Open the __StudiedSewers__ attribute table.
     3. Select each of the pipe segments that are part of the study sewer. Change the `StudySewer` field to `Y` for each of these segments. Study sewers should follow the following conventions:
-        * Not exceed the length of one typical city block (approximately 450 feet). Where sewer length exceeds approximately 450 feet within a city block, split the study area near the block midpoint. If possible, make the division at manholes.
+        * Not exceed the length of one typical city block (approximately 400 feet). Where sewer length exceeds approximately 400 feet within a city block, split the study area near the block midpoint. If possible, make the division at manholes.
         * Not extend across a change in sewer size or slope
         * Not extend beyond a junction of two or more sewers
     4. Identify the TC path for the drainage area.
