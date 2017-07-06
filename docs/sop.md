@@ -36,7 +36,7 @@ A decription of all related files is located [here]({{site.baseurl}}/files). The
 ## 1. Review Engineering Records
 Because the SSHA tool relies on the accuracy of electronic data sources, existing engineering records should be reviewed to confirm accuracy.
 1. For each study area, open and review return plans. All slope information from data conversion must be confirmed against sewer return plans for accuracy.
-3. Review the hardcopy sewer studies (if available) in the filing cabinets long the southermost wall, west of the mezzanine in the Design Unit on the 2nd Floor. Sewer studies are organized by outfall number, then in alphabetical order by street.
+2. Review the hardcopy sewer studies (if available) in the filing cabinets long the southermost wall, west of the mezzanine in the Design Unit on the 2nd Floor. Sewer studies are organized by outfall number, then in alphabetical order by street.
 
 ## 2. Delineate Drainage Areas
 1. In ArcMap, navigate to the study area based on the street connection point provided.
@@ -51,12 +51,9 @@ Because the SSHA tool relies on the accuracy of electronic data sources, existin
     2. Block ends should be cut at the parcel vertices on either side of the street.
     3. Drainage areas should be cut at approximate 45 degree angles from terminal block parcel vertices and extended until approximately the block midpoint. As a rule of thumb, drainage area boundaries should evenly split the space between the sewers.
     ![SSHA Example Shed Delineation]({{site.baseurl}}/public/img/ssha-delineation-angles-example.png)
-    As in the example above, a drainage boundary between sewers that are oriented with a 50 degree angle between them should bisect the sewers at 25 degrees from each sewer. Typically, surface features, topography, and parcel boundaries should not influence the drainage area delineation. In areas with low drainage density and/or steep slopes, more traditional drainage area delineation should be used.
-    4. When applicable hardcopy sewer studies are found:
-        1. Ensure drainage area delineation is consistent.
-        2. Ensure runoff coefficient is consistent.
+    As in the example above, a drainage boundary between sewers that are oriented with a 50 degree angle between them should bisect the sewers at 25 degrees from each sewer. Typically, surface features, topography, and parcel boundaries should not influence the drainage area delineation. In areas with low drainage density and/or steep slopes, more traditional drainage area delineation should be used.  
 
-5. Compare your drafted drainage area to the __NewSubSheds__ layer as secondary measure to ensure that vital portions of the drainage area are not missed.
+5. Compare your drafted drainage area to the __NewSubSheds__ layer as secondary measure to ensure that vital portions of the drainage area are not missed. When applicable hardcopy sewer studies are found, ensure drainage area delineation is consistent.
 6. Open the __Drainage Areas__ attribute table and manually enter the [Project_ID]({{site.baseurl}}/definitions/#project_id), StudyArea_ID and ConnectionPoint attributes for the new drainage area. For example, data entered for two drainage areas with a [Project_ID]({{site.baseurl}}/definitions/#project_id) (or work order number) of 40000 should look like this:
 
       | Project_ID | StudyArea_ID | ConnectionPoint |
@@ -123,7 +120,7 @@ Replace `[project_id]` with the appropriate Project_ID and click _Apply_ to run 
         1. Input parameters into the Slope Value Verification tool and navigate to the minimum design velocity section.
 5. Input this resolved slope value as an attribute in the `Slope_Used` field for the study sewer.
 6. In the Editor Toolbar dropdown menu, select _Save Edits_, then _Stop Editing_.
-7. Repeat step 3: [Perform Hydraulic and Hydrologic Calculations](#3-perform-hydraulic-and-hydrologic-calculations)  
+7. Repeat step 4: [Perform Hydraulic and Hydrologic Calculations](#4-perform-hydraulic-and-hydrologic-calculations)  
 <br>
 ***Note***: Slope data is often missing in short sewer segments at the end of city blocks, as shown by the red-highlighted sewer in the figure below.
 ![Data Gap Corner Screenshot]({{site.baseurl}}/public/img/example-typical-data-gap-crop.png)
@@ -149,7 +146,7 @@ Data Driven Pages is a ArcMap feature that facilitates the output reporting from
     4. Click _OK_
 
 ## 8. Qaulity Control Procedure
-1. Confirm that all data gaps identified in [Section 4](#4-resolve-data-gaps) are resolved. Ensure that no sewers are hightlighted with red symbology, taking care to review all small sewers at the ends of city blocks.
+1. Confirm that all data gaps identified in [Section 5](#5-resolve-data-gaps) are resolved. Ensure that no sewers are hightlighted with red symbology, taking care to review all small sewers at the ends of city blocks.
 2. Review return plans and compare to SSHA results. Electronic plans can be accessed via [ERV](http://170.115.80.42/ERV2_Basic/ERV2.aspx) or by the navigating to the `STICKERLINK`. Confirm that geometry and slope data is consistent with the original engineering records.
 3. Review the hardcopy sewer studies (if available). When applicable hardcopy sewer studies are found:
     1. Ensure drainage area delineation is consistent.
