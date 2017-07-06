@@ -128,19 +128,17 @@ Determine whether sewers adjacent to the study sewer (upstream and downstream) a
 3. Note that any study sewer with upstream flow splits is outside the scope of this analysis and should not be performed.
 
 ## 6. Set Up Data Driven Pages
-Data Driven Pages is a ArcMap feature that facilitates the output reporting from the SSHA tool and easy navigation between study areas within a given Project_ID. Here, Data Driven Pages make use of a index layer created for each Project_ID when the _Run H&H Calcs_ tool is run. Each drainage area index layer shares the name of the Project_ID, prefixed with `DA_`. For example, a Project_ID of 40000 would be assigned a index layer of __DA_40000__.
+Data Driven Pages is a ArcMap feature that facilitates the output reporting from the SSHA tool and easy navigation between study areas within a given Project_ID. Here, Data Driven Pages make use of a index layer created for each Project_ID when the _Run H&H Calcs_ tool is run. Each drainage area (DA) index layer shares the name of the Project_ID, prefixed with `DA_`. For example, a Project_ID of 40000 would be assigned a index layer of __DA_40000__.
 1. In the __Drainage Areas__ layer group in the ArcMap table of contents, right-click on the __DA Indicies__ sub-group and select _Add Data_. Navigate to the __StudyAreaIndices__ feature dataset in the __Small_Sewer_Capacity__ geodatabase and add the appropriate index layer.       
 2. Switch to __Layout View__.
-3. Enable Data Driven Pages
-    1. Click the Data Driven Pages setup Icon        ![](data:image/*;base64,iVBORw0KGgoAAAANSUhEUgAAACUAAAAoCAIAAAD2YqSKAAAAAXNSR0IArs4c6QAAA8FJREFUWEftV0tME1EU7RRa+kewJBawfhACgYgYMS4wCBvYajSiiCsTEEtQ1IUmsnKJO2M0MTGujJ+FRFdikL8xFkoRUyGSpkBRCGD/n5l2xgPTlEo7pR2QFW/x0um759x77ud1SrjdbgHfRRBEslBhsoBN2u/422QC18F38rmTz2QyQGzmfknGUciWCAQCPGC8IQRFUbzBPIDbPX8ESZI8wuQNCfnr7u4GRXV1dSSRrqU1J1vj8XhI0k9RgWAwyNB0Xl5e6/XWZP0NDQ1JJBIwpDIMEwaLRKJ1ctvb762jNhr0HXcbSkqKBEQaTYhlclXOgUJKoqak6sPZqjhxFBYW4jSVtaiqqhKLxTGtG5uawyodtmWNeO5K46VcrRY/tYyA8bjds5ax4UnF3hPnNxQ9Ojq6ps/v93MBwiqfP2guO1L7fVS/O1MmligFDC1kfEp50OFYmrFamT05MRlomlar1dg1Gk2oP3tWV5wAofJ2c/1BbXrX+07Sa3faFkjPste58Gva9G3k68+JSavVGhOOeUMH4MhsNuNuEaJ+4RKmpaWxj5FfhlmK94nHx755vX6LeXqwp9/y0zRjnjAaxr/oLSQjn52djcSyn9EgLpfLaDTOz8/b7fa5ublQ/SorK9E/cfQRTGDqxxidIfVlSny/HX4fqZSLxkwLHz9bnr788Ozdp7cDXwVXT69jgDjcX0VFRXCMZkQEIX345F1dXPoYIrXhzovdxdmKfGX6qTOUpupVv+2c7uGSX47aNJ2tfXNfF1NfSkoKgoA4dD60hurXt7qi9dXVXQh/WVBQEFip/MmS4+cDudMBTer+A4fYV0KlUoleiIZDHPxhZWVloVgqleqf+kml0sgYLzfUt7ToIlnA/bm3q/N1h9jlOpovYo+iZUV2wMjIyPDwsF6vR7/AeO33SCaT4Zntpch1o+2W3fYnfVfGk8ePohWUHyvv7evlKjwSCGdwj+KVlpYiq2v1Q7NiRQfbcOmiTnctTivF0cceCYVCDPfU1JRcLicQArgGBgawV1RUcPG23bwNlU6nEz1FkSQKE6RpXKew7+nlHFyQI41ardZkMq0Mn1BIgAKYwcFB7DU1Naz76GUwGLhCKSsr4zpiE4abBZ4WFxfxGPIHgEKhwM7lL04+4xyBDZOHzvT5fHC50i8Oh4MfVyIoNAhkYB4gEfOH/f/6i46JQAiJRLpVNtv+/mKz2bYq9kR4tl0fZgItm0hoW2ITul9WJiP5P/88IiAwiYDhfor0hwnlwZUIJIY+rhe1ROg2tPkLR4KIzivntkkAAAAASUVORK5CYII=)
-    2. Check the Enable Data Driven Pages box. Set the index layer to the layer within &quot;Drainage Areas&quot; &gt; &quot;DA Indices&quot; &gt; &quot;DA\_\*\*\*&quot;, where &quot;\*\*\*&quot; is the current Project ID.
-    3. Set the Name Field and Sort Field to StudyArea\_ID
-  4. Set-up the display expression.
-    1. In the &quot;DA\_\*\*\*&quot; layer properties, navigate to the Display tab and select &quot;Expression&quot;
-      1. Click the &quot;Load&quot; button
-      2. Navigate to the &quot;Scripts/arcmap\_expressions&quot; folder, select &quot;StudyAreaSummary2.lxp &quot;
-      3. Click &quot;Open&quot;
-      4. Click &quot;OK&quot;
+3. Click on the Data Driven Pages setup icon: ![Data Driven Pages Icon]({{site.baseurl}}/public/img/ddp_icon.png) to open the Set Up __Data Driven Pages__ dialog. In the __Layer__ dropdown menu, enter the appropriate DA index layer. Update the remaining fields in the dialog as shown below:
+![Data Driven Dialog]({{site.baseurl}}/public/img/ddp-dialog.jpg)
+4. Set-up the display expression.
+    1. In the DA index layer properties, navigate to the __Display__ tab and click on _Expression..._
+    1. Click the _Load..._ button
+    2. Navigate to the `Scripts/arcmap_expressions` folder and select StudyAreaSummary3.lxp
+    3. Click _Open_
+    4. Click _OK_
 
 ## 7. Qaulity Control Procedure
 1. Confirm that runoff coefficient is consistent with land cover characteristics
