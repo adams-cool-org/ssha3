@@ -120,8 +120,7 @@ Replace `[project_id]` with the appropriate Project_ID and click _Apply_ to run 
 5. Input this resolved slope value as an attribute in the `Slope_Used` field for the study sewer.
 6. In the Editor Toolbar dropdown menu, select _Save Edits_, then _Stop Editing_.
 7. Repeat step 3: [Perform Hydraulic and Hydrologic Calculations](#3-perform-hydraulic-and-hydrologic-calculations)  
-
-
+<br>
 ***Note***: Slope data is often missing in short sewer segments at the end of city blocks, as shown by the red-highlighted sewer in the figure below.
 ![Data Gap Corner Screenshot]({{site.baseurl}}/public/img/example-typical-data-gap-crop.png)
 These sewers can be assumed to have slope equal to the average slope in the upstream block of sewer so long as they are not limiting the block capacity.
