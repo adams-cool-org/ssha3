@@ -21,7 +21,7 @@ This SOP is intended to guide the completion of small sewer hydraulic analyses
 contributing drainage areas for small sewers. This procedure makes us of GIS
 script tools applied within an ArcGIS basemap and geodatabase on the LAMP drive
 at this server location:
-> \\\PWDHQR2\Data\Planning &amp; Research\Linear Asset Management Program\Water Sewer Projects Initiated\03 GIS Data\Hydraulic Studies
+> \\\PWDHQR2\Data\Planning & Research\Linear Asset Management Program\Water Sewer Projects Initiated\03 GIS Data\Hydraulic Studies
 
 A decription of all related files is located [here]({{site.baseurl}}/files). The SSHA procedure is outlined below:
 
@@ -40,11 +40,11 @@ A decription of all related files is located [here]({{site.baseurl}}/files). The
 ## 1. Delineate Drainage Areas
 1. Navigate to the study area based on the street connection point provided.
 2. Identify the study sewer and the branches that contribute to it (if any).
-    1. Ensure the study sewer is within the size limit for the SSHA process. This tool is designed to be used on conduits that are no larger than 36&quot; diameter or equivalent size.
-    2. The Trace Upstream tool may be used to identify contributing branches. To use this, ensure the Utility Network Analyst tool is added to the toolbar and set on the &quot;Data Conversion Waste Water Network&quot; or &quot;Data Conversion Storm Water Network&quot;, depending on the network being analyzed.
-    3. Confirm that Vent Pipes are disabled from this analysis (these tend to erroneously extend the upstream trace). To do this, right-click the &quot;Analysis&quot; drop down menu, &quot;Disable Layers&quot; and check &quot;Storm Water Vent Pipes&quot; or &quot;Waste Water Vent Pipes&quot;.
-    4. Place an Edge Flag Tool near the downstream end of the study pipe, select &quot;Trace Upstream&quot;, and click the &quot;Solve&quot; button. The contributing branches will be highlighted in red. Review the identified upstream pipes and check for errors.
-3. The contributing drainage area should encompass all of the contributing branches. To delineate the new drainage area, first right click the &quot;Drainage Areas&quot; layer and select &quot;Edit Features&quot;&gt;&quot;Start Editing&quot;. Then, click on &quot;Create Features&quot; in the Editor Toolbar and select the &quot;Drainage Areas&quot; layer.
+    1. Ensure the study sewer is within the size limit for the SSHA process. This tool is designed to be used on conduits that are no larger than 36-inch diameter (or equivalent size).
+    2. The Trace Upstream tool may be used to identify contributing branches. To use this, ensure the _Utility Network Analyst_ tool is added to the toolbar and set on the Data Conversion Waste Water Network or Data Conversion Storm Water Network, depending on the network being analyzed.
+    3. Exclude Vent Pipes from the analysis by checking Waste Water Vent Pipes or Storm Water Vent Pipes in the _Disable Layers_ list within the _Analysis_ drop down menu in the _Utility Network Analyst_ toolbar.
+    4. Place an Edge Flag Tool near the downstream end of the study pipe, select __Trace Upstream__, and click the _Solve_ button. The contributing branches will be highlighted in red. Review the identified upstream pipes and check for errors.
+3. The contributing drainage area should encompass all of the contributing branches. To delineate the new drainage area, first right click the __Drainage Areas__ layer, select _Edit Features_, then _Start Editing_. Next, click on _Create Features_ in the Editor Toolbar and select the __Drainage Areas__ layer.
 4. Draft the new drainage area based on the following rules of thumb:
     1. Blocks that are adjacent to contributing pipe reaches at the edge of the drainage area should be bisected.
     2. Block ends should be cut at the parcel vertices on either side of the street.
@@ -53,7 +53,7 @@ A decription of all related files is located [here]({{site.baseurl}}/files). The
     As in the example above, a drainage boundary between sewers that are oriented with a 50 degree angle between them should bisect the sewers at 25 degrees from each sewer. Surface features and parcel boundaries should not influence the drainage area delineation.
 
 5. Compare your drafted drainage area to the __NewSubSheds__ layer as secondary measure to ensure that vital portions of the drainage area are not missed.
-6. Open the __Drainage Areas__ attribute table and manually enter the [Project\_ID]({{site.baseurl}}/definitions/#project_id), StudyArea\_ID and ConnectionPoint attributes for the new drainage area. For example, data entered for two drainage areas with a [Project\_ID]({{site.baseurl}}/definitions/#project_id) (or work order number) of 40000 should look like this:
+6. Open the __Drainage Areas__ attribute table and manually enter the [Project_ID]({{site.baseurl}}/definitions/#project_id), StudyArea_ID and ConnectionPoint attributes for the new drainage area. For example, data entered for two drainage areas with a [Project_ID]({{site.baseurl}}/definitions/#project_id) (or work order number) of 40000 should look like this:
 
       | Project\_ID | StudyArea\_ID | ConnectionPoint |
       | --- | --- | --- |
@@ -61,15 +61,15 @@ A decription of all related files is located [here]({{site.baseurl}}/files). The
       | 40000 | 40000\_02 | 11 St from Filbert to Arch |
 
 
-7. Repeat steps &quot;a&quot; through &quot;f&quot; for each study area.
-8. In the Editor Toolbar dropdown menu, select &quot;Save Edits&quot;, then &quot;Stop Editing&quot;.
+7. Repeat steps _a_ through _f_ for each study area.
+8. In the Editor Toolbar dropdown menu, select _Save Edits&_, then _Stop Editing_.
 
 ## 2. Associate Sewers to Drainage Areas
-Add the study sewers (and their contributing sewers) from the &quot;Waste Water Gravity Mains&quot; layer to the &quot;Studied Sewers&quot; Layer.
+Add the study sewers (and their contributing sewers) from the __Waste Water Gravity Mains__ layer to the __Studied Sewers__ Layer.
 ![Associate Sewers Example Screenshot]({{site.baseurl}}/public/img/associate-sewers-example.jpg)
 1. Associate study sewers to the Drainage Areas.
-    1. Navigate to the Small\_Sewer\_Calcs Toolbox within the ArcToolbox.
-    2. Select the &quot;Associate Sewers to DAs&quot; tool.
+    1. Navigate to the __Small_Sewer_Calcs__ toolbox within the ArcToolbox window.
+    2. Select the _Associate Sewers to DAs_ tool.
     3. Input the command prompt options:
         * [Project_ID]({{site.baseurl}}/definitions/#project_id) – Project_ID from the __Drainage Areas__ attribute table
         * From Sewers Layer – __Waste Water Gravity Mains__ or __Storm Water Gravity Mains__
@@ -106,17 +106,17 @@ Project_ID = [project_id] AND (Tag = 'SS_MIN_SLOPE' OR Tag = 'TC_MIN_SLOPE' OR T
 ```
 Replace `[project_id]` with the appropriate Project_ID and click "Apply" to run the query. This query will select all important sewers within the Project_ID that are missing data.
 4. For each sewer, attempt to resolve the missing slope value using the following methods, until a slope value is determined:  
-**From Design/Return Plans**
-    1. For each study sewer tagged in this category, navigate to the drawing using the URL in the `STICKERLINK` field. Do this by copying and pasting the URL into the Internet Explorer browser.
-    2. Determine if the missing slope values are listed in the drawing for the study sewer. Note than in some instances, the drawing for a neighboring sewer will contain the missing slope value that is needed.  
-**From Adjacent Manhole Inverts**
-    1. Navigate to the upstream and downstream manholes of the sewer in question and see if invert elevations exist in the attribute table for these manholes.
-    2. Use the invert elevations and the length of the pipe to calculate slope.  
-**Based on Ground Surface Terrain**
-    1. Use the __GIS_GSG.Contour_2015_1ft__ layer to view contours for the area to calculate the slope.
-    2. Input the parameters into the Slope Value Verification Tool and navigate to the Terrain Slope section. Determine if the new velocity value falls within the design velocity criteria. If it does, the slope may be used.  
-**Based on Minimum Design Velocity**  
-    1. Input parameters into the Slope Value Verification tool and navigate to the minimum design velocity section.
+    * **From Design/Return Plans**
+        1. For each study sewer tagged in this category, navigate to the drawing using the URL in the `STICKERLINK` field. Do this by copying and pasting the URL into the Internet Explorer browser.
+        2. Determine if the missing slope values are listed in the drawing for the study sewer. Note than in some instances, the drawing for a neighboring sewer will contain the missing slope value that is needed.  
+    * **From Adjacent Manhole Inverts**
+        1. Navigate to the upstream and downstream manholes of the sewer in question and see if invert elevations exist in the attribute table for these manholes.
+        2. Use the invert elevations and the length of the pipe to calculate slope.  
+    * **Based on Ground Surface Terrain**
+        1. Use the __GIS_GSG.Contour_2015_1ft__ layer to view contours for the area to calculate the slope.
+        2. Input the parameters into the Slope Value Verification Tool and navigate to the Terrain Slope section. Determine if the new velocity value falls within the design velocity criteria. If it does, the slope may be used.  
+    * **Based on Minimum Design Velocity**  
+        1. Input parameters into the Slope Value Verification tool and navigate to the minimum design velocity section.
 5. Input this resolved slope value as an attribute in the `Slope_Used` field for the study sewer.
 6. In the Editor Toolbar dropdown menu, select _Save Edits_, then _Stop Editing_.
 7. Repeat step 3: [Perform Hydraulic and Hydrologic Calculations](#3-perform-hydraulic-and-hydrologic-calculations)
