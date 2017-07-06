@@ -77,45 +77,45 @@ Add the study sewers (and their contributing sewers) from the &quot;Waste Water 
         * Drainage Area Layer – &quot;Drainage Areas&quot;
     4. Select &quot;OK&quot;. The tool will populate the StudiedSewers layer with the sewers intersecting the target drainage area.
 2. Identify the Study Sewer and Time of Concentration (TC) path for each study area.
-    1. Right-click the &quot;StudiedSewers&quot; layer. Select &quot;Edit Features&quot;, then &quot;Start Editing&quot;.
-    2. Open the &quot;StudiedSewers&quot; attribute table.
-    3. Select each of the pipe segments that are part of the study sewer. Change the &quot;StudySewer&quot; field to &quot;Y&quot; for each of these segments. Study sewers should follow the following conventions:
+    1. Right-click the __StudiedSewers__ layer. Select _Edit Features_, then _Start Editing_.
+    2. Open the __StudiedSewers__ attribute table.
+    3. Select each of the pipe segments that are part of the study sewer. Change the `StudySewer` field to `Y` for each of these segments. Study sewers should follow the following conventions:
         * Not exceed the length of one typical city block (approximately 450 feet). Where sewer length exceeds approximately 450 feet within a city block, split the study area near the block midpoint. If possible, make the division at manholes.
         * Not extend across a change in sewer size or slope
         * Not extend beyond a junction of two or more sewers
     4. Identify the TC path for the drainage area.
         * This can be completed by identifying the longest pipe reach within the drainage area with the Measure tool.
-        * Select each of the pipe segments making up the TC path. Change the &quot;TC\_Path&quot; field to &quot;Y&quot; for each of these segments.
-    5. Repeat steps &quot;iii&quot; and &quot;iv&quot; for each study area.
-3. In the Editor Toolbar dropdown menu, select &quot;Save Edits&quot;, then &quot;Stop Editing&quot;.
+        * Select each of the pipe segments making up the TC path. Change the `TC_Path` field to `Y` for each of these segments.
+    5. Repeat steps _iii_ and _iv_ for each study area.
+3. In the _Editor Toolbar_ dropdown menu, select _Save Edits_, then _Stop Editing_.
 
 ## 3. Perform Hydraulic and Hydrologic Calculations
 ![HH Calculations Example Screenshot]({{site.baseurl}}/public/img/hhcalcs-example.jpg)
-1. Navigate to the Small\_Sewer\_Calcs Toolbox within the ArcToolbox
-2. Select the &quot;Run H&amp;H Calcs&quot; tool
+1. Navigate to the __Small_Sewer_Calcs__ toolbox within the ArcToolbox window.
+2. Select the _Run H&H Calcs_ tool.
 3. Input the command prompt options. Enter the Study Area ID to perform calculations for one study sewer or enter the Project ID to perform batch calculations on the entire project.
 
 ## 4. Resolve Data Gaps
 ![Data Gap Example Screenshot]({{site.baseurl}}/public/img/example-data-gap.png)
-The &quot;Run H&amp;H Calcs&quot; will tag sewers that have missing or `<null>` slope values. To continue with the hydraulic calculations, a minimum slope of 0.01% is assumed. Review the drawings for these sewers and determine whether these slope values can be resolved.
-1. Right-click the &quot;StudiedSewers&quot; layer. Select &quot;Edit Features&quot;, then &quot;Start Editing&quot;.
-2. Open the &quot;StudiedSewers&quot; attribute table.
-3. Open the &quot;Select By Attributes&quot; tool and paste the following SQL query into the `WHERE` text box:
+The _Run H&H Calcs_ tool will tag sewers that have missing or `<null>` slope values. To continue with the hydraulic calculations, a minimum slope of 0.01% is assumed. Review the drawings for these sewers and determine whether these slope values can be resolved.
+1. Right-click the __StudiedSewers__ layer. Select _Edit Features_, then _Start Editing_.
+2. Open the __StudiedSewers__ attribute table.
+3. Open the _Select By Attributes_ tool and paste the following SQL query into the `WHERE` text box:
 ```SQL
 Project_ID = [project_id] AND (Tag = 'SS_MIN_SLOPE' OR Tag = 'TC_MIN_SLOPE' OR Tag = 'TC_UNDEFINED')
 ```
 Replace `[project_id]` with the appropriate Project_ID and click "Apply" to run the query. This query will select all important sewers within the Project_ID that are missing data.
-4. For each sewer, attempt to resolve the missing slope value using the following methods, until a slope value is determined:
+4. For each sewer, attempt to resolve the missing slope value using the following methods, until a slope value is determined:  
  **From Design/Return Plans**
     1. For each study sewer tagged in this category, navigate to the drawing using the URL in the `STICKERLINK` field. Do this by copying and pasting the URL into the Internet Explorer browser.
-    2. Determine if the missing slope values are listed in the drawing for the study sewer. Note than in some instances, the drawing for a neighboring sewer will contain the missing slope value that is needed.
+    2. Determine if the missing slope values are listed in the drawing for the study sewer. Note than in some instances, the drawing for a neighboring sewer will contain the missing slope value that is needed.  
  **From Adjacent Manhole Inverts**
     1. Navigate to the upstream and downstream manholes of the sewer in question and see if invert elevations exist in the attribute table for these manholes.
-    2. Use the invert elevations and the length of the pipe to calculate slope.
+    2. Use the invert elevations and the length of the pipe to calculate slope.  
  **Based on Ground Surface Terrain**
-    1. Use the "GIS_GSG.Contour_2015_1ft" layer to view contours for the area to calculate the slope.
+    1. Use the __GIS_GSG.Contour_2015_1ft__ layer to view contours for the area to calculate the slope.
     2. Input the parameters into the Slope Value Verification Tool and navigate to the Terrain Slope section. Determine if the new velocity value falls within the design velocity criteria. If it does, the slope may be used.
- **Based on Minimum Design Velocity**
+ **Based on Minimum Design Velocity**  
     1. Input parameters into the Slope Value Verification tool and navigate to the minimum design velocity section.
 5. Input this resolved slope value as an attribute in the `Slope_Used` field for the study sewer.
 6. In the Editor Toolbar dropdown menu, select _Save Edits_, then _Stop Editing_.
