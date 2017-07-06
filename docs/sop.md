@@ -97,7 +97,7 @@ Add the study sewers (and their contributing sewers) from the __Waste Water Grav
 
 ## 4. Resolve Data Gaps
 ![Data Gap Example Screenshot]({{site.baseurl}}/public/img/example-data-gap.png)
-The _Run H&H Calcs_ tool will tag sewers that have missing or `<null>` slope values. To continue with the hydraulic calculations, a minimum slope of 0.01% is assumed. Review the drawings for these sewers and determine whether these slope values can be resolved.
+The _Run H&H Calcs_ tool will tag sewers that have missing or `<null>` slope values and highlight them with red symbology, as shown above. The process below outlines how this missing data should be resolved.
 1. Right-click the __StudiedSewers__ layer. Select _Edit Features_, then _Start Editing_.
 2. Open the __StudiedSewers__ attribute table.
 3. Open the _Select By Attributes_ tool and paste the following SQL query into the `WHERE` text box:
@@ -108,7 +108,7 @@ Replace `[project_id]` with the appropriate Project_ID and click _Apply_ to run 
 4. For each sewer, attempt to resolve the missing slope value using the following methods, until a slope value is determined:  
     * **From Design/Return Plans**
         1. For each study sewer tagged in this category, navigate to the drawing using the URL in the `STICKERLINK` field. Do this by copying and pasting the URL into the Internet Explorer browser.
-        2. Determine if the missing slope values are listed in the drawing for the study sewer. Note than in some instances, the drawing for a neighboring sewer will contain the missing slope value that is needed.  
+        2. Determine if the missing slope values are listed in the drawing for the study sewer. Note that in some instances, the drawing for a neighboring sewer will contain the missing slope value that is needed.  
     * **From Adjacent Manhole Inverts**
         1. Navigate to the upstream and downstream manholes of the sewer in question and see if invert elevations exist in the attribute table for these manholes.
         2. Use the invert elevations and the length of the pipe to calculate slope.  
@@ -120,6 +120,12 @@ Replace `[project_id]` with the appropriate Project_ID and click _Apply_ to run 
 5. Input this resolved slope value as an attribute in the `Slope_Used` field for the study sewer.
 6. In the Editor Toolbar dropdown menu, select _Save Edits_, then _Stop Editing_.
 7. Repeat step 3: [Perform Hydraulic and Hydrologic Calculations](#3-perform-hydraulic-and-hydrologic-calculations)
+
+Note: Slope data is often missing in short sewer segments at the end of city blocks, as shown by the red-highlighted sewer in the figure below.
+![Data Gap Corner Screenshot]({{site.baseurl}}/public/img/example-typical-data-gap-crop.png)
+These sewers can be assumed to have slope equal to the average slope in the upstream block of sewer so long as they are not limiting the block capacity.
+
+
 
 ## 5. Assess Neighboring Sewers
 Determine whether sewers adjacent to the study sewer (upstream and downstream) are within the scope of the SSHA process.
