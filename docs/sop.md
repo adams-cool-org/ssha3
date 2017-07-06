@@ -41,7 +41,7 @@ A decription of all related files is located [here]({{site.baseurl}}/files). The
 1.
 1. In ArcMap, navigate to the study area based on the street connection point provided.
 2. Identify the study sewer and the branches that contribute to it (if any):
-    1. Ensure the study sewer is within the size limit for the SSHA process. This tool is to be used on conduits that are no larger than 36-inch diameter or equivalent size, (up to a 43x34 inch egg or a 45x27 inch box sewer). Refer to [this table](({{site.baseurl}}/equivalent-pipe-sizes) of equivalent pipe sizes applicable to SSHA.
+    1. Ensure the study sewer is within the size limit for the SSHA process. This tool is to be used on conduits that are no larger than 36-inch diameter or equivalent size, (up to a 43x34 inch egg or a 45x27 inch box sewer). Refer to [this table]({{site.baseurl}}/equivalent-pipe-sizes) of equivalent pipe sizes applicable to SSHA.
     2. The Trace Upstream tool may be used to identify contributing branches. To use this, ensure the _Utility Network Analyst_ tool is added to the toolbar and set on the Data Conversion Waste Water Network or Data Conversion Storm Water Network, depending on the network being analyzed.
     3. Exclude Vent Pipes from the analysis by checking Waste Water Vent Pipes or Storm Water Vent Pipes in the _Disable Layers_ list within the _Analysis_ drop down menu in the _Utility Network Analyst_ toolbar.
     4. Place an Edge Flag Tool near the downstream end of the study pipe, select _Trace Upstream_, and click the _Solve_ button. The contributing branches will be highlighted in red. Review the identified upstream pipes and check for errors.
