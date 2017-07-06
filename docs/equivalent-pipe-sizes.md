@@ -9,7 +9,5 @@ This data is provided as a quick reference for non-circular sewer geometries and
 
 
 | Height | Width | Shape | Equivalent Diameter |
-| ------ | ----- | ----- | ------------------ |
-{% for sewer in site.data.non_circular_sizes_in_scope_1percent %}
-| {{ sewer.Height }} | {{ sewer.Width }} | {{ sewer.PIPESHAPE }} | {{ sewer.Replacement_D }} |
-{% endfor %}
+| ------ | ----- | ----- | ------------------ |{% for sewer in site.data.non_circular_sizes_in_scope_1percent %}
+| {{ sewer.Height }} | {{ sewer.Width }} | {{ sewer.PIPESHAPE }} | {{ sewer.Replacement_D }} |{% endfor %}
