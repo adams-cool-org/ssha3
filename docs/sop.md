@@ -14,7 +14,7 @@ subtitle: Small Sewer Hydraulic Analysis
 
 ![SSHA Example Screenshot]({{site.baseurl}}/public/img/ssha-example-study-area.png)
 
-Updated June 30, 2017
+Updated July 5, 2017
 
 This SOP is intended to guide the completion of small sewer hydraulic analyses
 (SSHA) to determine the hydraulic capacity and peak design runoff from
