@@ -52,8 +52,8 @@ A decription of all related files is located [here]({{site.baseurl}}/files). The
     ![SSHA Example Shed Delineation]({{site.baseurl}}/public/img/ssha-delineation-angles-example.png)
     As in the example above, a drainage boundary between sewers that are oriented with a 50 degree angle between them should bisect the sewers at 25 degrees from each sewer. Surface features and parcel boundaries should not influence the drainage area delineation.
 
-5. Compare your drafted drainage area to the &quot;NewSubSheds&quot; layer as secondary measure to ensure that vital portions of the drainage area are not missed.
-6. Open the &quot;Drainage Areas&quot; attribute table and manually enter the [Project\_ID]({{site.baseurl}}/definitions/#project_id), StudyArea\_ID and ConnectionPoint attributes for the new drainage area. For example, data entered for two drainage areas with a [Project\_ID]({{site.baseurl}}/definitions/#project_id) (or work order number) of 40000 should look like this:
+5. Compare your drafted drainage area to the __NewSubSheds__ layer as secondary measure to ensure that vital portions of the drainage area are not missed.
+6. Open the __Drainage Areas__ attribute table and manually enter the [Project\_ID]({{site.baseurl}}/definitions/#project_id), StudyArea\_ID and ConnectionPoint attributes for the new drainage area. For example, data entered for two drainage areas with a [Project\_ID]({{site.baseurl}}/definitions/#project_id) (or work order number) of 40000 should look like this:
 
       | Project\_ID | StudyArea\_ID | ConnectionPoint |
       | --- | --- | --- |
@@ -71,11 +71,11 @@ Add the study sewers (and their contributing sewers) from the &quot;Waste Water 
     1. Navigate to the Small\_Sewer\_Calcs Toolbox within the ArcToolbox.
     2. Select the &quot;Associate Sewers to DAs&quot; tool.
     3. Input the command prompt options:
-        * [Project\_ID]({{site.baseurl}}/definitions/#project_id) – Project\_ID from the &quot;Drainage Areas&quot; attribute table
-        * From Sewers Layer – &quot;Waste Water Gravity Mains&quot; or &quot;Storm Water Gravity Mains&quot;
-        * Study Sewers Layer – &quot;StudiedSewers&quot;
-        * Drainage Area Layer – &quot;Drainage Areas&quot;
-    4. Select &quot;OK&quot;. The tool will populate the StudiedSewers layer with the sewers intersecting the target drainage area.
+        * [Project_ID]({{site.baseurl}}/definitions/#project_id) – Project_ID from the __Drainage Areas__ attribute table
+        * From Sewers Layer – __Waste Water Gravity Mains__ or __Storm Water Gravity Mains__
+        * Study Sewers Layer – __StudiedSewers__
+        * Drainage Area Layer – __Drainage Areas__
+    4. Select _OK_. The tool will populate the StudiedSewers layer with the sewers intersecting the target drainage area.
 2. Identify the Study Sewer and Time of Concentration (TC) path for each study area.
     1. Right-click the __StudiedSewers__ layer. Select _Edit Features_, then _Start Editing_.
     2. Open the __StudiedSewers__ attribute table.
@@ -106,16 +106,16 @@ Project_ID = [project_id] AND (Tag = 'SS_MIN_SLOPE' OR Tag = 'TC_MIN_SLOPE' OR T
 ```
 Replace `[project_id]` with the appropriate Project_ID and click "Apply" to run the query. This query will select all important sewers within the Project_ID that are missing data.
 4. For each sewer, attempt to resolve the missing slope value using the following methods, until a slope value is determined:  
- **From Design/Return Plans**
+**From Design/Return Plans**
     1. For each study sewer tagged in this category, navigate to the drawing using the URL in the `STICKERLINK` field. Do this by copying and pasting the URL into the Internet Explorer browser.
     2. Determine if the missing slope values are listed in the drawing for the study sewer. Note than in some instances, the drawing for a neighboring sewer will contain the missing slope value that is needed.  
- **From Adjacent Manhole Inverts**
+**From Adjacent Manhole Inverts**
     1. Navigate to the upstream and downstream manholes of the sewer in question and see if invert elevations exist in the attribute table for these manholes.
     2. Use the invert elevations and the length of the pipe to calculate slope.  
- **Based on Ground Surface Terrain**
+**Based on Ground Surface Terrain**
     1. Use the __GIS_GSG.Contour_2015_1ft__ layer to view contours for the area to calculate the slope.
-    2. Input the parameters into the Slope Value Verification Tool and navigate to the Terrain Slope section. Determine if the new velocity value falls within the design velocity criteria. If it does, the slope may be used.
- **Based on Minimum Design Velocity**  
+    2. Input the parameters into the Slope Value Verification Tool and navigate to the Terrain Slope section. Determine if the new velocity value falls within the design velocity criteria. If it does, the slope may be used.  
+**Based on Minimum Design Velocity**  
     1. Input parameters into the Slope Value Verification tool and navigate to the minimum design velocity section.
 5. Input this resolved slope value as an attribute in the `Slope_Used` field for the study sewer.
 6. In the Editor Toolbar dropdown menu, select _Save Edits_, then _Stop Editing_.
