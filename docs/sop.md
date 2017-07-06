@@ -43,7 +43,7 @@ A decription of all related files is located [here]({{site.baseurl}}/files). The
     1. Ensure the study sewer is within the size limit for the SSHA process. This tool is designed to be used on conduits that are no larger than 36-inch diameter (or equivalent size).
     2. The Trace Upstream tool may be used to identify contributing branches. To use this, ensure the _Utility Network Analyst_ tool is added to the toolbar and set on the Data Conversion Waste Water Network or Data Conversion Storm Water Network, depending on the network being analyzed.
     3. Exclude Vent Pipes from the analysis by checking Waste Water Vent Pipes or Storm Water Vent Pipes in the _Disable Layers_ list within the _Analysis_ drop down menu in the _Utility Network Analyst_ toolbar.
-    4. Place an Edge Flag Tool near the downstream end of the study pipe, select __Trace Upstream__, and click the _Solve_ button. The contributing branches will be highlighted in red. Review the identified upstream pipes and check for errors.
+    4. Place an Edge Flag Tool near the downstream end of the study pipe, select _Trace Upstream_, and click the _Solve_ button. The contributing branches will be highlighted in red. Review the identified upstream pipes and check for errors.
 3. The contributing drainage area should encompass all of the contributing branches. To delineate the new drainage area, first right click the __Drainage Areas__ layer, select _Edit Features_, then _Start Editing_. Next, click on _Create Features_ in the Editor Toolbar and select the __Drainage Areas__ layer.
 4. Draft the new drainage area based on the following rules of thumb:
     1. Blocks that are adjacent to contributing pipe reaches at the edge of the drainage area should be bisected.
@@ -55,14 +55,14 @@ A decription of all related files is located [here]({{site.baseurl}}/files). The
 5. Compare your drafted drainage area to the __NewSubSheds__ layer as secondary measure to ensure that vital portions of the drainage area are not missed.
 6. Open the __Drainage Areas__ attribute table and manually enter the [Project_ID]({{site.baseurl}}/definitions/#project_id), StudyArea_ID and ConnectionPoint attributes for the new drainage area. For example, data entered for two drainage areas with a [Project_ID]({{site.baseurl}}/definitions/#project_id) (or work order number) of 40000 should look like this:
 
-      | Project\_ID | StudyArea\_ID | ConnectionPoint |
+      | Project_ID | StudyArea_ID | ConnectionPoint |
       | --- | --- | --- |
-      | 40000 | 40000\_01 | 11 St from Market to Filbert |
-      | 40000 | 40000\_02 | 11 St from Filbert to Arch |
+      | 40000 | 40000_01 | 11 St from Market to Filbert |
+      | 40000 | 40000_02 | 11 St from Filbert to Arch |
 
 
 7. Repeat steps _a_ through _f_ for each study area.
-8. In the Editor Toolbar dropdown menu, select _Save Edits&_, then _Stop Editing_.
+8. In the Editor Toolbar dropdown menu, select _Save Edits_, then _Stop Editing_.
 
 ## 2. Associate Sewers to Drainage Areas
 Add the study sewers (and their contributing sewers) from the __Waste Water Gravity Mains__ layer to the __Studied Sewers__ Layer.
@@ -154,9 +154,9 @@ Data Driven Pages is a ArcMap feature that facilitates the output reporting from
     [<img src="{{site.baseurl}}/public/img/capacity-within-design-velocity-plot.png">](https://plot.ly/~aerispaha/57.embed)
 
 ## 8. Export the Study
-1. Go to &quot;File&quot;, then &quot;Export Map&quot;
-2. Navigate to the corresponding project folder for the current work order number and go to &quot;01 Analysis\03 Sewer Analysis&quot;
-3. Name the file as &quot;SSHA\_\*\*\*&quot;, where &quot;\*\*\*&quot; is the current Project ID.
-4. Choose the &quot;.PDF&quot; file type.
-5. Under &quot;Options&quot; choose the &quot;Pages&quot; tab. Choose &quot;All Pages&quot;
-6. Click &quot;Save&quot; to export the file.
+1. In the _File_ menu,  click on _Export Map..._
+2. Navigate to the corresponding project folder for the current work order number and go to `01 Analysis\03 Sewer Analysis`
+3. Name the file according to the Project ID prefixed with `SSHA_` (e.g. SSHA_40000.pdf)
+4. Choose the _PDF_ file type.
+5. Under _Options_ choose the _Pages_ tab. Choose _All Pages_
+6. Click _Save_ to export the file.
