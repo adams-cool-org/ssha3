@@ -50,7 +50,7 @@ A decription of all related files is located [here]({{site.baseurl}}/files). The
     2. Block ends should be cut at the parcel vertices on either side of the street.
     3. Drainage areas should be cut at approximate 45 degree angles from terminal block parcel vertices and extended until approximately the block midpoint. As a rule of thumb, drainage area boundaries should evenly split the space between the sewers.
     ![SSHA Example Shed Delineation]({{site.baseurl}}/public/img/ssha-delineation-angles-example.png)
-    As in the example above, a drainage boundary between sewers that are oriented with a 50 degree angle between them should bisect the sewers at 25 degrees from each sewer. Surface features and parcel boundaries should not influence the drainage area delineation.
+    As in the example above, a drainage boundary between sewers that are oriented with a 50 degree angle between them should bisect the sewers at 25 degrees from each sewer. Typically, surface features, topography, and parcel boundaries should not influence the drainage area delineation. In areas with low drainage density and/or steep slopes, more traditional drainage area delineation should be used.   
 
 5. Compare your drafted drainage area to the __NewSubSheds__ layer as secondary measure to ensure that vital portions of the drainage area are not missed.
 6. Open the __Drainage Areas__ attribute table and manually enter the [Project_ID]({{site.baseurl}}/definitions/#project_id), StudyArea_ID and ConnectionPoint attributes for the new drainage area. For example, data entered for two drainage areas with a [Project_ID]({{site.baseurl}}/definitions/#project_id) (or work order number) of 40000 should look like this:
@@ -104,7 +104,7 @@ The _Run H&H Calcs_ tool will tag sewers that have missing or `<null>` slope val
 ```SQL
 Project_ID = [project_id] AND (Tag = 'SS_MIN_SLOPE' OR Tag = 'TC_MIN_SLOPE' OR Tag = 'TC_UNDEFINED')
 ```
-Replace `[project_id]` with the appropriate Project_ID and click "Apply" to run the query. This query will select all important sewers within the Project_ID that are missing data.
+Replace `[project_id]` with the appropriate Project_ID and click _Apply_ to run the query. This query will select all important sewers within the Project_ID that are missing data.
 4. For each sewer, attempt to resolve the missing slope value using the following methods, until a slope value is determined:  
     * **From Design/Return Plans**
         1. For each study sewer tagged in this category, navigate to the drawing using the URL in the `STICKERLINK` field. Do this by copying and pasting the URL into the Internet Explorer browser.
