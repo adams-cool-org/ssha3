@@ -106,16 +106,20 @@ Project_ID = [project_id] AND (Tag = 'SS_MIN_SLOPE' OR Tag = 'TC_MIN_SLOPE' OR T
 ```
 Replace `[project_id]` with the appropriate Project_ID and click "Apply" to run the query. This query will select all important sewers within the Project_ID that are missing data.
 4. For each sewer, attempt to resolve the missing slope value using the following methods, until a slope value is determined:
-    **From Design/Return Plans**
+
+**From Design/Return Plans**
     1. For each study sewer tagged in this category, navigate to the drawing using the URL in the `STICKERLINK` field. Do this by copying and pasting the URL into the Internet Explorer browser.
     2. Determine if the missing slope values are listed in the drawing for the study sewer. Note than in some instances, the drawing for a neighboring sewer will contain the missing slope value that is needed.
-    **From Adjacent Manhole Inverts**
+
+**From Adjacent Manhole Inverts**
     1. Navigate to the upstream and downstream manholes of the sewer in question and see if invert elevations exist in the attribute table for these manholes.
     2. Use the invert elevations and the length of the pipe to calculate slope.
-    **Based on Ground Surface Terrain**
+
+**Based on Ground Surface Terrain**
     1. Use the "GIS_GSG.Contour_2015_1ft" layer to view contours for the area to calculate the slope.
     2. Input the parameters into the Slope Value Verification Tool and navigate to the Terrain Slope section. Determine if the new velocity value falls within the design velocity criteria. If it does, the slope may be used.
-    **Based on Minimum Design Velocity**
+
+**Based on Minimum Design Velocity**
     1. Input parameters into the Slope Value Verification tool and navigate to the minimum design velocity section.
 5. Input this resolved slope value as an attribute in the `Slope_Used` field for the study sewer.
 6. In the Editor Toolbar dropdown menu, select _Save Edits_, then _Stop Editing_.
@@ -131,7 +135,7 @@ Determine whether sewers adjacent to the study sewer (upstream and downstream) a
 Data Driven Pages is a ArcMap feature that facilitates the output reporting from the SSHA tool and easy navigation between study areas within a given Project_ID. Here, Data Driven Pages make use of a index layer created for each Project_ID when the _Run H&H Calcs_ tool is run. Each drainage area (DA) index layer shares the name of the Project_ID, prefixed with `DA_`. For example, a Project_ID of 40000 would be assigned a index layer of __DA_40000__.
 1. In the __Drainage Areas__ layer group in the ArcMap table of contents, right-click on the __DA Indicies__ sub-group and select _Add Data_. Navigate to the __StudyAreaIndices__ feature dataset in the __Small_Sewer_Capacity__ geodatabase and add the appropriate index layer.       
 2. Switch to __Layout View__.
-3. Click on the Data Driven Pages setup icon: ![Data Driven Pages Icon]({{site.baseurl}}/public/img/ddp_icon.png){: max-height="1em"} to open the Set Up __Data Driven Pages__ dialog. In the __Layer__ dropdown menu, enter the appropriate DA index layer. Update the remaining fields in the dialog as shown below:
+3. Click on the Data Driven Pages setup icon: ![Data Driven Pages Icon]({{site.baseurl}}/public/img/ddp_icon.png){:style="max-height:'1em';"} to open the Set Up __Data Driven Pages__ dialog. In the __Layer__ dropdown menu, enter the appropriate DA index layer. Update the remaining fields in the dialog as shown below:
 ![Data Driven Dialog]({{site.baseurl}}/public/img/ddp-dialog.jpg)
 4. Set-up the display expression.
     1. In the DA index layer properties, navigate to the __Display__ tab and click on _Expression..._
