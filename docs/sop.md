@@ -38,9 +38,10 @@ A decription of all related files is located [here]({{site.baseurl}}/files). The
 <hr>
 
 ## 1. Delineate Drainage Areas
-1. Navigate to the study area based on the street connection point provided.
-2. Identify the study sewer and the branches that contribute to it (if any).
-    1. Ensure the study sewer is within the size limit for the SSHA process. This tool is designed to be used on conduits that are no larger than 36-inch diameter (or equivalent size).
+1.
+1. In ArcMap, navigate to the study area based on the street connection point provided.
+2. Identify the study sewer and the branches that contribute to it (if any):
+    1. Ensure the study sewer is within the size limit for the SSHA process. This tool is to be used on conduits that are no larger than 36-inch diameter or equivalent size, (up to a 43x34 inch egg or a 45x27 inch box sewer). Refer to [this table](({{site.baseurl}}/equivalent-pipe-sizes) of equivalent pipe sizes applicable to SSHA.
     2. The Trace Upstream tool may be used to identify contributing branches. To use this, ensure the _Utility Network Analyst_ tool is added to the toolbar and set on the Data Conversion Waste Water Network or Data Conversion Storm Water Network, depending on the network being analyzed.
     3. Exclude Vent Pipes from the analysis by checking Waste Water Vent Pipes or Storm Water Vent Pipes in the _Disable Layers_ list within the _Analysis_ drop down menu in the _Utility Network Analyst_ toolbar.
     4. Place an Edge Flag Tool near the downstream end of the study pipe, select _Trace Upstream_, and click the _Solve_ button. The contributing branches will be highlighted in red. Review the identified upstream pipes and check for errors.
@@ -105,7 +106,7 @@ The _Run H&H Calcs_ tool will tag sewers that have missing or `<null>` slope val
 Project_ID = [project_id] AND (Tag = 'SS_MIN_SLOPE' OR Tag = 'TC_MIN_SLOPE' OR Tag = 'TC_UNDEFINED')
 ```
 Replace `[project_id]` with the appropriate Project_ID and click _Apply_ to run the query. This query will select all important sewers within the Project_ID that are missing data.
-4. For each sewer, attempt to resolve the missing slope value using the following methods, until a slope value is determined:  
+4. For each sewer identified, attempt to resolve the missing slope value.  Step through the following list of methods (in order of preference) until a slope value is determined:  
     * **From Design/Return Plans**
         1. For each study sewer tagged in this category, navigate to the drawing using the URL in the `STICKERLINK` field. Do this by copying and pasting the URL into the Internet Explorer browser.
         2. Determine if the missing slope values are listed in the drawing for the study sewer. Note that in some instances, the drawing for a neighboring sewer will contain the missing slope value that is needed.  
@@ -124,8 +125,6 @@ Replace `[project_id]` with the appropriate Project_ID and click _Apply_ to run 
 ***Note***: Slope data is often missing in short sewer segments at the end of city blocks, as shown by the red-highlighted sewer in the figure below.
 ![Data Gap Corner Screenshot]({{site.baseurl}}/public/img/example-typical-data-gap-crop.png)
 These sewers can be assumed to have slope equal to the average slope in the upstream block of sewer so long as they are not limiting the block capacity.
-
-
 
 ## 5. Assess Neighboring Sewers
 Determine whether sewers adjacent to the study sewer (upstream and downstream) are within the scope of the SSHA process.
@@ -147,17 +146,17 @@ Data Driven Pages is a ArcMap feature that facilitates the output reporting from
     4. Click _OK_
 
 ## 7. Qaulity Control Procedure
-1. Confirm that runoff coefficient is consistent with land cover characteristics
+1. Confirm that all data gaps identified in [Section 4](#4-resolve-data-gaps) are resolved. Ensure that no sewers are hightlighted with red symbology, taking care to review all small sewers at the ends of city blocks.
+2. Review return plans and compare to SSHA results. Electronic plans can be accessed via [ERV](http://170.115.80.42/ERV2_Basic/ERV2.aspx) or by the navigating to the `STICKERLINK`. Confirm that geometry and slope data is consistent with the original engineering records.
+3. Review the hardcopy sewer studies (if available) in the filing cabinets long the southermost wall, west of the mezzanine in the Design Unit on the 2nd Floor. Sewer studies are organized by outfall number, then in alphabetical order by street. When applicable hardcopy sewer studies are found:
+    1. Ensure drainage area delineation is consistent.
+    2. Ensure runoff coefficient is consistent.
+4. Confirm that runoff coefficient is consistent with land cover characteristics
     1. For dense areas of the city, assume C=0.85 (default)
     2. For less dense residential areas (e.g. Manayunk, Northeast, etc.), assume C=0.75
-2. Review hard copy sewer study (if available)
-    1. Ensure drainage area delineation is consistent
-    2. Ensure runoff coefficient is consistent
-3. Confirm that the &quot;Run H&amp;H Calcs&quot; tool is executed after all corrections to data are made.
-4. For each study area, review the return plans to confirm that DataConv data is accurate.
-5. Review results and identify irregularities
-    1. Confirm that calculated capacity is within range of typical values. [This chart](https://plot.ly/~aerispaha/57.embed) shows possible capacity values for a range of sewer diameters within the design velocity range (2.5 to 15fps):
-    [<img src="{{site.baseurl}}/public/img/capacity-within-design-velocity-plot.png">](https://plot.ly/~aerispaha/57.embed)
+3. Confirm that the _Run H&H Calcs_ tool is executed after all corrections to data are made.
+5. Review results and identify any irregularities. Confirm that calculated capacity is within range of typical values. [This chart](https://plot.ly/~aerispaha/57.embed) shows possible capacity values for a range of sewer diameters within the design velocity range (2.5 to 15fps):
+[<img src="{{site.baseurl}}/public/img/capacity-within-design-velocity-plot.png">](https://plot.ly/~aerispaha/57.embed)
 
 ## 8. Export the Study
 1. In the _File_ menu,  click on _Export Map..._
