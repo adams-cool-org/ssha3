@@ -14,9 +14,9 @@ subtitle: Small Sewer Hydraulic Analysis
 
 ![SSHA Example Screenshot]({{site.baseurl}}/public/img/ssha-example-study-area.png)
 
-Updated July 6, 2017
+Updated July 7, 2017
 
-This SOP is intended to guide the completion of small sewer hydraulic analyses (SSHA) to determine the hydraulic capacity and peak design runoff from contributing drainage areas for small sewers. This procedure makes us of GIS script tools applied within an ArcGIS basemap and geodatabase on the LAMP drive at this server location:
+This SOP is intended to guide the completion of small sewer hydraulic analysis (SSHA) to determine the hydraulic capacity and peak design runoff from contributing drainage areas for small sewers. This procedure makes us of GIS script tools applied within an ArcGIS basemap and geodatabase on the LAMP drive at this server location:
 > \\\PWDHQR2\Data\Planning & Research\Linear Asset Management Program\Water Sewer Projects Initiated\03 GIS Data\Hydraulic Studies
 
 A decription of all related files is located [here]({{site.baseurl}}/files). The SSHA procedure is outlined below:
@@ -54,7 +54,7 @@ Because the SSHA tool relies on the accuracy of electronic data sources, existin
     As in the example above, a drainage boundary between sewers that are oriented with a 50 degree angle between them should bisect the sewers at 25 degrees from each sewer. Typically, surface features, topography, and parcel boundaries should not influence the drainage area delineation. In areas with low drainage density and/or steep slopes, more traditional drainage area delineation should be used.  
 
 5. Compare your drafted drainage area to the __NewSubSheds__ layer as secondary measure to ensure that vital portions of the drainage area are not missed. When applicable hardcopy sewer studies are found, ensure drainage area delineation is consistent.
-6. Open the __Drainage Areas__ attribute table and manually enter the [Project_ID]({{site.baseurl}}/definitions/#project_id), StudyArea_ID and ConnectionPoint attributes for the new drainage area. For example, data entered for two drainage areas with a [Project_ID]({{site.baseurl}}/definitions/#project_id) (or work order number) of 40000 should look like this:
+6. Open the __Drainage Areas__ attribute table and manually enter the [Project_ID]({{site.baseurl}}/definitions/#project_id), [StudyArea_ID]({{site.baseurl}}/definitions/#studyarea_id) and [Connection Point]({{site.baseurl}}/definitions/#connection-point) attributes for the new drainage area. For example, data entered for two drainage areas with a Project_ID (or work order number) of 40000 should look like this:
 
       | Project_ID | StudyArea_ID | ConnectionPoint |
       | --- | --- | --- |

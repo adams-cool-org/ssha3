@@ -1,4 +1,8 @@
 term,definition
+Connection Point, Cross-streets in which a particular sewer is installed
 Drainage Area Index,Drainage area feature class that is a copy of the data within the Small_Sewer_Drainage_Areas feature class for a given Project_ID.
 Project_ID,Identifying code given to a particular set of studied sewers. This almost always should correspond to the work numbers assigned by LAMP or other.
+SSHA, Small Sewer Hydraulic Analysis
 StudyArea_ID,Unique identifier for a study area within a given project
+Study Sewer, Length of sewer for which a given study area is focused upon
+TC Path, Set of sewers in a given study area that represents the longest flow path upstream of the study sewer
