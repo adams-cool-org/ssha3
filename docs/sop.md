@@ -35,7 +35,7 @@ A decription of all related files is located [here]({{site.baseurl}}/files). The
 
 ## 1. Review Engineering Records
 Because the SSHA tool relies on the accuracy of electronic data sources, existing engineering records should be reviewed to confirm accuracy.
-1. For each study area, open and review return plans. All slope information from data conversion must be confirmed against sewer return plans for accuracy.
+1. For each study area, open and review return plans. All slope information from the [DataConv]({{site.baseurl}}/definitions/#DataConv) database must be confirmed against sewer return plans for accuracy.
 2. Review the hardcopy sewer studies (if available) in the filing cabinets long the southermost wall, west of the mezzanine in the Design Unit on the 2nd Floor. Sewer studies are organized by outfall number, then in alphabetical order by street.
 
 ## 2. Delineate Drainage Areas
