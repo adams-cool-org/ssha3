@@ -4,11 +4,9 @@ title: Related Files
 ---
 
 
-All files related to the Small Sewer Hydraulic Analysis (SSHA) tool are described below. File paths are relative to this directory on the LAMP drive:
-> \\\PWDHQR2\Data\Planning &amp; Research\Linear Asset Management Program\Water Sewer Projects Initiated\03 GIS Data\Hydraulic Studies
+All files related to the Small Sewer Hydraulic Analysis (SSHA) tool are described below. File paths are relative to this directory on the LAMP drive in the Hydraulic Studies folder.
 
 <hr>
-
 
 * **Small Sewer Capacity.mxd**: ArcMap file in which the SSHA tool is run
 * **Small_Sewer_Capacity.gdb**: Geodatabase containing data and SSHA results
