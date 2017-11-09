@@ -26,7 +26,7 @@ A decription of all related files is located [here]({{site.baseurl}}/files). The
 5. [Resolve Data Gaps](#5-resolve-data-gaps)
 6. [Assess Neighboring Sewers](#6-assess-neighboring-sewers)
 7. [Set Up Data Driven Pages](#7-set-up-data-driven-pages)
-8. [Qaulity Control Procedure](#8-qaulity-control-procedure)
+8. [Quality Control Procedure](#8-quality-control-procedure)
 9. [Export the Study](#9-export-the-study)
 {: .normal-list}
 
