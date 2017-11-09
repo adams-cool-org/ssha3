@@ -16,8 +16,7 @@ subtitle: Small Sewer Hydraulic Analysis
 
 Updated July 7, 2017
 
-This SOP is intended to guide the completion of small sewer hydraulic analysis (SSHA) to determine the hydraulic capacity and peak design runoff from contributing drainage areas for small sewers. This procedure makes us of GIS script tools applied within an ArcGIS basemap and geodatabase on the LAMP drive at this server location:
-> \\\PWDHQR2\Data\Planning & Research\Linear Asset Management Program\Water Sewer Projects Initiated\03 GIS Data\Hydraulic Studies
+This SOP is intended to guide the completion of small sewer hydraulic analysis (SSHA) to determine the hydraulic capacity and peak design runoff from contributing drainage areas for small sewers. This procedure makes use of GIS script tools applied within an ArcGIS basemap and a local geodatabase.
 
 A decription of all related files is located [here]({{site.baseurl}}/files). The SSHA procedure is outlined below:
 1. [Review Engineering Records](#1-review-engineering-records)
@@ -41,7 +40,7 @@ Because the SSHA tool relies on the accuracy of electronic data sources, existin
 ## 2. Delineate Drainage Areas
 1. In ArcMap, navigate to the study area based on the street connection point provided.
 2. Identify the study sewer and the branches that contribute to it (if any):
-    1. Ensure the study sewer is within the size limit for the SSHA process. This tool is to be used on conduits that are no larger than 36-inch diameter or equivalent size, (up to a 43x34 inch egg or a 45x27 inch box sewer). Refer to [this table]({{site.baseurl}}/equivalent-sewer-sizes) for all equivalent pipe sizes applicable to SSHA.
+    1. Ensure the study sewer is within the size limit for the SSHA process. This tool is to be used on conduits that are no larger than 36-inch diameter or equivalent size, (up to a 43 x 34-inch egg or a 45 x 27-inch box sewer). Refer to [this table]({{site.baseurl}}/equivalent-sewer-sizes) for all equivalent pipe sizes applicable to SSHA.
     2. The Trace Upstream tool may be used to identify contributing branches. To use this, ensure the _Utility Network Analyst_ tool is added to the toolbar and set on the Data Conversion Waste Water Network or Data Conversion Storm Water Network, depending on the network being analyzed.
     3. Exclude Vent Pipes from the analysis by checking Waste Water Vent Pipes or Storm Water Vent Pipes in the _Disable Layers_ list within the _Analysis_ drop down menu in the _Utility Network Analyst_ toolbar.
     4. Place an Edge Flag Tool near the downstream end of the study pipe, select _Trace Upstream_, and click the _Solve_ button. The contributing branches will be highlighted in red. Review the identified upstream pipes and check for errors.
@@ -145,7 +144,7 @@ Data Driven Pages is a ArcMap feature that facilitates the output reporting from
     3. Click _Open_
     4. Click _OK_
 
-## 8. Qaulity Control Procedure
+## 8. Quality Control Procedure
 1. Confirm that all data gaps identified in [Section 5](#5-resolve-data-gaps) are resolved. Ensure that no sewers are hightlighted with red symbology, taking care to review all small sewers at the ends of city blocks.
 2. Review return plans and compare to SSHA results. Electronic plans can be accessed via [ERV](http://170.115.80.42/ERV2_Basic/ERV2.aspx) or by the navigating to the `STICKERLINK`. Confirm that geometry and slope data is consistent with the original engineering records.
 3. Review the hardcopy sewer studies (if available). When applicable hardcopy sewer studies are found:
